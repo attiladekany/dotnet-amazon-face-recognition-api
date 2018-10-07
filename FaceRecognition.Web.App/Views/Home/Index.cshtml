@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<script type="text/javascript">
+    function environmentalDetectionCallback(result) {
+
+        //alert(result.checksPassed ? 'Passed ' : 'Failed. ' + result.failureReasonString);
+        alert(result.checksPassed ? 'Passed ' : 'Please use Firefox or Chrome and be equipped by a webcam!');
+    }
+    var _RealeyesitEnvDetectParams = _RealeyesitEnvDetectParams || {};
+    _RealeyesitEnvDetectParams._callback = environmentalDetectionCallback;
+    (function () {
+        var envDetect = document.createElement('script');
+        envDetect.type = 'text/javascript';
+        envDetect.async = true;
+        envDetect.src = 'https://codesdwncdn.realeyesit.com/environment-checker/release/3/Realeyesit.EnvironmentalDetectionAPI.min.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(envDetect, s);
+    })();
+</script>
+
+
+<div id="container">
+
+    <h1>
+        <a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>
+        <br/>
+        <span>Select sources &amp; outputs</span>
+    </h1>
+
+    <p>
+        Get available audio, video sources and audio output devices from <code>mediaDevices.enumerateDevices()</code>
+        then set the source for <code>getUserMedia()</code> using a <code>deviceId</code> constraint.
+    </p>
+
+    @*<div class="select">
+        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+    </div>
+
+    <div class="select">
+        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+    </div>*@
+
+    <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
+
+    <video id="video" playsinline autoplay></video>
+
+    <p class="small">
+        <b>Note:</b> If you hear a reverb sound your microphone is picking up the output of your
+        speakers/headset, lower the volume and/or move the microphone further away from your speakers/headset.
+    </p>
+
+    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/devices/input-output"
+       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+</div>
+
+
+@Scripts.RenderFormat(@"<script src="" {0}"" async></script>", "~/bundles/main")
+
+<div class="row">
+
+</div>
