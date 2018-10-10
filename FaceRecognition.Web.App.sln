@@ -5,7 +5,11 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceRecognition.Web.App", "FaceRecognition.Web.App\FaceRecognition.Web.App.csproj", "{B95F2DB9-5898-4AF3-BF8D-55F1D75501EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Recognition.API", "Amazon.Recognition.API\Amazon.Recognition.API.csproj", "{A5690245-D134-4175-9DA5-F92D1398C325}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Recognition.API.BLL", "Amazon.Recognition.API.BLL\Amazon.Recognition.API.BLL.csproj", "{81C49245-B8F2-4AB7-9527-AB703FA356E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Recognition.API.BLL.Test", "Amazon.Recognition.API.BLL.Test\Amazon.Recognition.API.BLL.Test.csproj", "{424EC510-0B5E-4B82-96D6-34C4B2C77EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazon.Recognition.API", "Amazon.Recognition.API\Amazon.Recognition.API.csproj", "{7565AC94-AB71-476B-8118-492D62080CF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,18 @@ Global
 		{B95F2DB9-5898-4AF3-BF8D-55F1D75501EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B95F2DB9-5898-4AF3-BF8D-55F1D75501EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B95F2DB9-5898-4AF3-BF8D-55F1D75501EA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5690245-D134-4175-9DA5-F92D1398C325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5690245-D134-4175-9DA5-F92D1398C325}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5690245-D134-4175-9DA5-F92D1398C325}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5690245-D134-4175-9DA5-F92D1398C325}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C49245-B8F2-4AB7-9527-AB703FA356E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C49245-B8F2-4AB7-9527-AB703FA356E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C49245-B8F2-4AB7-9527-AB703FA356E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C49245-B8F2-4AB7-9527-AB703FA356E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{424EC510-0B5E-4B82-96D6-34C4B2C77EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424EC510-0B5E-4B82-96D6-34C4B2C77EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{424EC510-0B5E-4B82-96D6-34C4B2C77EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{424EC510-0B5E-4B82-96D6-34C4B2C77EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7565AC94-AB71-476B-8118-492D62080CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7565AC94-AB71-476B-8118-492D62080CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7565AC94-AB71-476B-8118-492D62080CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7565AC94-AB71-476B-8118-492D62080CF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

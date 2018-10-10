@@ -5,3 +5,23 @@
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+
+<script>
+    function draw() {
+
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        context.strokeStyle = "red";
+
+        context.lineWidth = "6";
+        context.rect(100, 100, 50, 50);
+        context.stroke();
+
+    }
+</script>
+<button id="button" onclick="draw()">Draw</button>
+
+
+<canvas id="canvas" width="500" height="375" style="background: rgba(255, 255, 255, 0.34); border: 1px solid #d3d3d3;"></canvas>

@@ -2,65 +2,50 @@
     ViewBag.Title = "Home Page";
 }
 
-
-<script type="text/javascript">
-    function environmentalDetectionCallback(result) {
-
-        //alert(result.checksPassed ? 'Passed ' : 'Failed. ' + result.failureReasonString);
-        alert(result.checksPassed ? 'Passed ' : 'Please use Firefox or Chrome and be equipped by a webcam!');
-    }
-    var _RealeyesitEnvDetectParams = _RealeyesitEnvDetectParams || {};
-    _RealeyesitEnvDetectParams._callback = environmentalDetectionCallback;
-    (function () {
-        var envDetect = document.createElement('script');
-        envDetect.type = 'text/javascript';
-        envDetect.async = true;
-        envDetect.src = 'https://codesdwncdn.realeyesit.com/environment-checker/release/3/Realeyesit.EnvironmentalDetectionAPI.min.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(envDetect, s);
-    })();
-</script>
-
+    @Scripts.Render("~/bundles/Recognition")
 
 <div id="container">
-
-    <h1>
-        <a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>
-        <br/>
-        <span>Select sources &amp; outputs</span>
-    </h1>
-
-    <p>
-        Get available audio, video sources and audio output devices from <code>mediaDevices.enumerateDevices()</code>
-        then set the source for <code>getUserMedia()</code> using a <code>deviceId</code> constraint.
-    </p>
-
-    @*<div class="select">
-        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
-    </div>
-
-    <div class="select">
-        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
-    </div>*@
-
     <div class="select">
         <label for="videoSource">Video source: </label><select id="videoSource"></select>
     </div>
+    <div class="row">
+        <div class="col-sm-5">
+            <video id="video" width="500" height="375" playsinline autoplay></video>
+        </div>
 
-    <video id="video" playsinline autoplay></video>
+        <div class="col-sm-2"></div>
 
-    <p class="small">
-        <b>Note:</b> If you hear a reverb sound your microphone is picking up the output of your
-        speakers/headset, lower the volume and/or move the microphone further away from your speakers/headset.
-    </p>
+        <div class="col-sm-5">
+            <div style="position: relative">
+                <img id="img" src="" style="position: absolute; vertical-align: unset;">
+                <canvas id="canvas-face-rect" width="500" height="375" style="background: rgba(255, 255, 255, 0); position: absolute; border: 1px solid #d3d3d3;"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
 
-    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/devices/input-output"
-       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+        <div class="col-sm-2">
+            <button id="button" onclick="Recognize()">Recognize</button>
+        </div>
+        <div class="col-sm-10">
+        </div>
+    </div>
+    
+    @*Canvas for creating img src*@
+    <canvas id="canvas" width="500" height="375" style="display: none;"></canvas>
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <hr />
+            <h2>Analyzis</h2>
+
+            <div id="result"></div>
+
+            <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/devices/input-output" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+        </div>
+    </div>
+
 </div>
-
 
 @Scripts.RenderFormat(@"<script src="" {0}"" async></script>", "~/bundles/main")
-
-<div class="row">
-
-</div>
